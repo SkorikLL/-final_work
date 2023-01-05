@@ -1,4 +1,15 @@
-﻿
+﻿//показывает в терминале все что входит в массив
+void PrintArray (string[] nums)
+{
+    Console.Write("Данные которые ввел пользователь: ");
+    int size = nums.Length;
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write(nums[i] + " ");
+    }
+    Console.WriteLine();
+}
+
 
 void FillArray(string[] nums)
 {
@@ -23,6 +34,7 @@ void final_work ()
     int sizeArray = Convert.ToInt32(Console.ReadLine());
     string[] array = new string[sizeArray];
     FillArray(array);
+    PrintArray(array);
 
 
 }
