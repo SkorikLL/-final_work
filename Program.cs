@@ -1,7 +1,7 @@
 ﻿//показывает в терминале все что входит в массив
-void PrintArray (string[] nums)
+void PrintArray (string[] nums, string message = "Данные которые ввел пользователь: ")
 {
-    Console.Write("Данные которые ввел пользователь: ");
+    Console.Write(message);
     int size = nums.Length;
     for (int i = 0; i < size; i++)
     {
@@ -10,7 +10,7 @@ void PrintArray (string[] nums)
     Console.WriteLine();
 }
 
-
+//Вводим данные в массив
 void FillArray(string[] nums)
 {
     int length = nums.Length;
@@ -21,7 +21,22 @@ void FillArray(string[] nums)
     }
 }
 
-
+//В новый массив добавляем значания длина у которых менше или равна 3
+void NewArrayLenghtThree(string[] nums)
+{
+    int length = nums.Length;
+    string[] arrayNew = new string[length];
+    int counter = 0;
+    for (int i =0; i < length; i++)
+    {
+        if(nums[i].Length <= 3)
+        {
+            arrayNew[counter] = nums[i];
+            counter++;
+        }
+    }
+    PrintArray(arrayNew, "Данные в новом массиве ");
+}
 
 
 //Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
@@ -35,14 +50,10 @@ void final_work ()
     string[] array = new string[sizeArray];
     FillArray(array);
     PrintArray(array);
-
-
+    NewArrayLenghtThree(array);
 }
 
 
 Console.Clear();
 
-
-//Zadacha42 ();
-//Zadacha41 ();
 final_work();
